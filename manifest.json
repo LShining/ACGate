@@ -30,7 +30,7 @@
   ],
   "applications": {
     "gecko": {
-      "id": "ACGate@lukeshining.org",
+      "id": "ACGate@mozilla.org",
       "strict_min_version": "42.0"
     }
   }
