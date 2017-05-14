@@ -1,6 +1,6 @@
 function replacer(){
     //Process pixiv patterns
-    chrome.storage.local.get("pixiv", function(value){
+    browser.storage.local.get("pixiv", function(value){
         if (value.pixiv == "true") {
             //Regex definitions
             var pixivPattern = /(?=.{6,20}\b)(?=(\b[Pp])|\b(id|Id|ID))[^0-9]{0,12}(\d{6,10})/g;
@@ -15,7 +15,7 @@ function replacer(){
     });
     
     //Process bilibili patterns
-    chrome.storage.local.get("bilibili", function(value){
+    browser.storage.local.get("bilibili", function(value){
         if (value.bilibili == "true") {
             //Regex definitions
             var bilibiliPattern = /(av|Av|AV)(\u53f7)?([0-9]{5,10})/g;
@@ -29,7 +29,7 @@ function replacer(){
         }
     });
     //Process magnet links patterns
-    chrome.storage.local.get("magnet", function(value){
+    browser.storage.local.get("magnet", function(value){
         if (value.magnet == "true") {
             //Regex definitions
             var magnetPattern = /(?=.*[0-9])(?=.*[a-z])([0-9A-Z]{32,40})/gi;
@@ -44,7 +44,7 @@ function replacer(){
     });
     
     //Process magnet links patterns
-    chrome.storage.local.get("baidu", function(value){
+    browser.storage.local.get("baidu", function(value){
         if (value.baidu == "true") {
             //Regex definitions
             var baiduPattern = /[\s\/^:\uff1a](?=.{0,7}[a-z])(?=.{0,7}[0-9])([0-9a-z]{8})(?=$|[^0-9a-z.='"])\s*(\u5bc6\u7801:?)?([0-9a-z]{4})?/gi;
