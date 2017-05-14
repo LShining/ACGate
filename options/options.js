@@ -1,5 +1,5 @@
 function restoreOptions() {
-    chrome.storage.local.get("pixiv", function(value){
+    browser.storage.local.get("pixiv", function(value){
         if (value.pixiv == "false") {
             document.getElementById("onoffswitchPixiv").checked = false;
         }
@@ -8,7 +8,7 @@ function restoreOptions() {
         };
     });
     
-    chrome.storage.local.get("bilibili", function(value){
+    browser.storage.local.get("bilibili", function(value){
         if (value.bilibili == "false") {
             document.getElementById("onoffswitchBilibili").checked = false;
         }
@@ -17,7 +17,7 @@ function restoreOptions() {
         };
     });
     
-    chrome.storage.local.get("magnet", function(value){
+    browser.storage.local.get("magnet", function(value){
         if (value.magnet == "false") {
             document.getElementById("onoffswitchMagnet").checked = false;
         }
@@ -26,7 +26,7 @@ function restoreOptions() {
         };
     });
     
-    chrome.storage.local.get("baidu", function(value){
+    browser.storage.local.get("baidu", function(value){
         if (value.baidu == "false") {
             document.getElementById("onoffswitchBaidu").checked = false;
         }
@@ -36,7 +36,7 @@ function restoreOptions() {
     });
 }
 function cancelToQuit() {
-    document.getElementById("cancel").innerHTML = chrome.i18n.getMessage("Quit")
+    document.getElementById("cancel").innerHTML = browser.i18n.getMessage("Quit")
 }
 
 function closeCurrentTab() {
@@ -46,40 +46,40 @@ function closeCurrentTab() {
 function saveOptions() {
     console.log("poi");
     if (document.getElementById("onoffswitchPixiv").checked == true) {
-        chrome.storage.local.set({pixiv: "true"}, function(){})
+        browser.storage.local.set({pixiv: "true"}, function(){})
     }
     else {
-        chrome.storage.local.set({pixiv: "false"}, function(){})
+        browser.storage.local.set({pixiv: "false"}, function(){})
     };
     
     if (document.getElementById("onoffswitchBilibili").checked == true) {
-        chrome.storage.local.set({bilibili: "true"}, function(){})
+        browser.storage.local.set({bilibili: "true"}, function(){})
     }
     else {
-        chrome.storage.local.set({bilibili: "false"}, function(){})
+        browser.storage.local.set({bilibili: "false"}, function(){})
     };
     
     if (document.getElementById("onoffswitchMagnet").checked == true) {
-        chrome.storage.local.set({magnet: "true"}, function(){})
+        browser.storage.local.set({magnet: "true"}, function(){})
     }
     else {
-        chrome.storage.local.set({magnet: "false"}, function(){})
+        browser.storage.local.set({magnet: "false"}, function(){})
     };
     
     if (document.getElementById("onoffswitchBaidu").checked == true) {
-        chrome.storage.local.set({baidu: "true"}, function(){})
+        browser.storage.local.set({baidu: "true"}, function(){})
     }
     else {
-        chrome.storage.local.set({baidu: "false"}, function(){})
+        browser.storage.local.set({baidu: "false"}, function(){})
     };
-    document.getElementById("tips").innerHTML = chrome.i18n.getMessage("SaveMSG");
+    document.getElementById("tips").innerHTML = browser.i18n.getMessage("SaveMSG");
     cancelToQuit();
 }
 function restoreOptionsToDefaut(){
-    chrome.storage.local.set({pixiv: "true", bilibili: "true", magnet: "true", baidu: "true"}, function(){});
+    browser.storage.local.set({pixiv: "true", bilibili: "true", magnet: "true", baidu: "true"}, function(){});
     //Update the option status
     restoreOptions();
-    document.getElementById("tips").innerHTML = chrome.i18n.getMessage("ResetMSG");
+    document.getElementById("tips").innerHTML = browser.i18n.getMessage("ResetMSG");
     cancelToQuit();
 }
 function initialization() {
@@ -89,14 +89,14 @@ function initialization() {
     document.getElementById("reset").addEventListener("click", restoreOptionsToDefaut);
     
     //Initialization of option page UI
-    document.getElementById("pixiv").innerHTML = chrome.i18n.getMessage("Pixiv");
-    document.getElementById("Bilibili").innerHTML = chrome.i18n.getMessage("Bilibili");
-    document.getElementById("Magnet").innerHTML = chrome.i18n.getMessage("Magnet");
-    document.getElementById("Baidu").innerHTML = chrome.i18n.getMessage("Baidu");
-    document.getElementById("save").innerHTML = chrome.i18n.getMessage("Save");
-    document.getElementById("cancel").innerHTML = chrome.i18n.getMessage("Cancel");
-    document.getElementById("reset").innerHTML = chrome.i18n.getMessage("Reset");
-    document.getElementById("tips").innerHTML = chrome.i18n.getMessage("DefaultMSG");
+    document.getElementById("pixiv").innerHTML = browser.i18n.getMessage("Pixiv");
+    document.getElementById("Bilibili").innerHTML = browser.i18n.getMessage("Bilibili");
+    document.getElementById("Magnet").innerHTML = browser.i18n.getMessage("Magnet");
+    document.getElementById("Baidu").innerHTML = browser.i18n.getMessage("Baidu");
+    document.getElementById("save").innerHTML = browser.i18n.getMessage("Save");
+    document.getElementById("cancel").innerHTML = browser.i18n.getMessage("Cancel");
+    document.getElementById("reset").innerHTML = browser.i18n.getMessage("Reset");
+    document.getElementById("tips").innerHTML = browser.i18n.getMessage("DefaultMSG");
     
 }
 
