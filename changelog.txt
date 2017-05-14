@@ -1,0 +1,3 @@
+Version 0.12: Fixed a bug that once caused some Maglink to be unrecognized.
+
+Version 0.11: Initial version.

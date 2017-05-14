@@ -1,0 +1,54 @@
+{
+    "name": {
+        "description": "Name(ACGate)",
+        "message": "ACGate"
+    },
+    "description": {
+        "description": "A short description of this extension (ACGate).",
+        "message": "Automatically detect and convert certain \"Pixiv ID\" and other text patterns into hyperlinks."
+    },
+    "Pixiv": {
+        "description": "Pixiv text",
+        "message": "Pixiv ID auto-conversion:"
+    },
+    "Bilibili": {
+        "description": "Bilibili text",
+        "message": "Bilibili video address auto-conversion:"
+    },
+    "Magnet": {
+        "description": "Magnet text",
+        "message": "Magnetic links auto-conversion:"
+    },
+    "Baidu": {
+        "description": "Baidu text",
+        "message": "Baidu NetDisk address auto-conversion:"
+    },
+    "Save": {
+        "description": "save",
+        "message": "Save"
+    },
+    "Cancel": {
+        "description": "cancel",
+        "message": "Cancel"
+    },
+    "Reset": {
+        "description": "reset",
+        "message": "Reset"
+    },
+    "Quit": {
+        "description": "quit",
+        "message": "Quit"
+    },
+    "SaveMSG": {
+        "description": "SaveMSG",
+        "message": "Options saved."
+    },
+    "ResetMSG": {
+        "description": "ResetMSG",
+        "message": "Options reset to defaut."
+    },
+    "DefaultMSG": {
+        "description": "DefaultMSG",
+        "message": "Defaut: all on."
+    }
+}

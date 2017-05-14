@@ -1,0 +1,55 @@
+{
+    "name": {
+        "description": "Name(ACGate)",
+        "message": "ACGate:次元之门"
+    },
+    "description": {
+        "description": "A short description of this extension (ACGate).",
+        "message": "闷声地转换PixivID=19260817等字样的文本为超链接。目前支持：Pixiv、百度网盘、B站av号、磁力链接。很惭愧，就做了一点微小的工作。"
+    },
+    "Pixiv": {
+        "description": "Pixiv text",
+        "message": "Pixiv ID 自动转换:"
+    },
+    "Bilibili": {
+        "description": "Bilibili text",
+        "message": "Bilibili av号自动转换:"
+    },
+    "Magnet": {
+        "description": "Magnet text",
+        "message": "（疑似）磁力链接自动转换:"
+    },
+    "Baidu": {
+        "description": "Baidu text",
+        "message": "百度网盘链接自动转换:"
+    },
+    "Save": {
+        "description": "save",
+        "message": "保存"
+    },
+    "Cancel": {
+        "description": "cancel",
+        "message": "取消"
+    },
+    "Reset": {
+        "description": "reset",
+        "message": "重置"
+    },
+    "Quit": {
+        "description": "quit",
+        "message": "退出"
+    },
+    "SaveMSG": {
+        "description": "SaveMSG",
+        "message": "选项已保存."
+    },
+    "ResetMSG": {
+        "description": "ResetMSG",
+        "message": "选项已恢复至默认值."
+    },
+    "DefaultMSG": {
+        "description": "DefaultMSG",
+        "message": "默认设置:全部开启."
+    }
+}
+

@@ -1,0 +1,83 @@
+.switchWrapper {
+    text-align: right;
+}
+
+.onoffswitch {
+    position: relative; width: 120px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    align: right; display: inline-block;
+    margin-right: 10px;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 35px; padding: 0; line-height: 35px;
+    font-size: 17px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #DE21D5; color: #FFFFFF;
+    text-align: left;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 20px; margin: 7.5px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 81px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+.pixiv:before {
+    background-color: #0096DB;
+}
+
+.pixiv:after {
+    background-color: #EEEEEE;
+}
+
+.optionText {
+    color:#0096DB; font-size: 15px; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    margin-left: 10px;
+}
+
+.buttons {
+    text-align:center;
+}
+
+.hrLine {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-width: 1px;
+}
+
+.button {
+    background-color: #0096DB; color: #FFFFFF; position: relative;
+    height: 40px; font-family: Arial font-size: 25px padding: 5px;
+    border-radius: 10px; text-align: middle; width: 100px; 
+    display: inline-block; border: 2px solid #999999;
+    font-weight: bold; margin:6px;
+}
