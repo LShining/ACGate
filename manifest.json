@@ -27,12 +27,6 @@
   },
   "permissions": [
   "tabs", "storage"
-  ],
-  "applications": {
-    "gecko": {
-      "id": "ACGate",
-      "strict_min_version": "42.0"
-    }
-  }
+  ]
 }
 
