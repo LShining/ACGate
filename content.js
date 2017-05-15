@@ -37,7 +37,7 @@ function replacer(){
     browser.storage.local.get("magnet", function(value){
         if (value.magnet == "true") {
             //Regex definitions
-            var magnetPattern = /(?=.*[0-9])(?=.*[a-z])([0-9A-Z]{32,40})/gi;
+            var magnetPattern = /(?=.{0,31}[0-9])(?=.{0,31}[a-z])([0-9A-Z]{32,40})/gi;
             //Replacer functions
             function magnetReplacer(match, p1){
                 //p10 the number ID
