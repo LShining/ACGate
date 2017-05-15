@@ -76,7 +76,7 @@
 
 .button {
     background-color: #0096DB; color: #FFFFFF; position: relative;
-    height: 40px; font-family: Arial font-size: 25px padding: 5px;
+    height: 40px; font-family: Arial; font-size: 25px; padding: 5px;
     border-radius: 10px; text-align: middle; width: 100px; 
     display: inline-block; border: 2px solid #999999;
     font-weight: bold; margin:6px;
