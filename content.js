@@ -1,3 +1,8 @@
+browser.storage.local.get("pixiv", function(value){
+        if (value.pixiv == undefined) {
+            browser.storage.local.set({pixiv: "true", bilibili: "true", magnet: "true", baidu: "true"}, function(){});
+        }
+});
 function replacer(){
     //Process pixiv patterns
     browser.storage.local.get("pixiv", function(value){
