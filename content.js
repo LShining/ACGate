@@ -1,3 +1,4 @@
+//For the first time this extension run
 chrome.storage.local.get("pixiv", function(value){
         if (value.pixiv == undefined) {
             chrome.storage.local.set({pixiv: "true", bilibili: "true", magnet: "true", baidu: "true"}, function(){});
@@ -63,4 +64,21 @@ function replacer(){
         }
     });
 }
-document.addEventListener("DOMContentLoaded", replacer);
+
+function forcedReplace(){
+    if (document.readyState != "complete"){
+        replacer();
+        window.removeEventListener("load", replacer);
+    }
+}
+
+function recorder(){
+    console.log(document.readyState);
+}
+
+window.addEventListener("load", replacer);
+
+//document.addEventListener("readystatechange", recorder);
+
+//Forced replace if 10s has passed and load has not been triggered.
+setTimeout(forcedReplace, 10000);
