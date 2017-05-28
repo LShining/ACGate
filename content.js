@@ -8,7 +8,7 @@ function replacer(){
     browser.storage.local.get("pixiv", function(value){
         if (value.pixiv == "true") {
             //Regex definitions
-            var pixivPattern = /(?=.{6,20}\b)(?=(\b[Pp])|\b(id|Id|ID))[^0-9]{0,12}(\d{6,10})/g;
+            var pixivPattern = /(?=.{6,20}\b)(?=(\b[Pp])|\b(id|Id|ID))[^0-9]{0,12}(\d{6,10})(?![:.\-\!\?])/g;
             //Replacer functions
             function pixivReplacer(match, p1, p2, p3){
                 //p3 the number ID
@@ -23,7 +23,7 @@ function replacer(){
     browser.storage.local.get("bilibili", function(value){
         if (value.bilibili == "true") {
             //Regex definitions
-            var bilibiliPattern = /(av|Av|AV)(\u53f7)?([0-9]{5,10})/g;
+            var bilibiliPattern = /(av|Av|AV)(\u53f7)?([0-9]{5,10})(?![:.\-\!\?])/g;
             //Replacer functions
             function bilibiliReplacer(match, p1, p2, p3){
                 //p10 the number ID
@@ -37,7 +37,7 @@ function replacer(){
     browser.storage.local.get("magnet", function(value){
         if (value.magnet == "true") {
             //Regex definitions
-            var magnetPattern = /(?=.{0,31}[0-9])(?=.{0,31}[a-z])([0-9A-Z]{32,40})/gi;
+            var magnetPattern = /(?=.{0,31}[0-9])(?=.{0,31}[a-z])([0-9A-Z]{32,40})(?![:.\-\!\?])/gi;
             //Replacer functions
             function magnetReplacer(match, p1){
                 //p10 the number ID
