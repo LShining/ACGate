@@ -1,3 +1,5 @@
+Version 0.14 Updated various regex logics; added support for custom password of private BaiduNetDisk links.
+
 Version 0.13 Fixed css bugs; improved BaiduNetDisk regex
 
 Version 0.12: Fixed a bug that once caused some Maglink to be unrecognized.
