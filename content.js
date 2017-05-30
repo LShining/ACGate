@@ -5,7 +5,7 @@ browser.storage.local.get("pixiv", function(value){
 });
 function replacer(){
     //Special replacer for hacg
-    var hcagPattern = /(\u672c\u7ad9\u4e0d\u63d0\u4f9b(\u6587\u4ef6)?\u4e0b\u8f7d)/g
+    var hcagPattern = /(\u672c\u7ad9\u6682?\u4e0d\u63d0\u4f9b(\u6587\u4ef6)?\u4e0b\u8f7d)/g
     $(function(){$("*").replaceText(hcagPattern, "");});
     //Process pixiv patterns
     browser.storage.local.get("pixiv", function(value){
