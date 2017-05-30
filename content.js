@@ -66,7 +66,7 @@ function replacer(){
     chrome.storage.local.get("baidu", function(value){
         if (value.baidu == "true") {
             //Custom password
-            $(document.body).on("click", "#share", customPassword);
+            $(document.body).on("mouseenter", "#share", customPassword);
             
             //Regex definitions
             var baiduPattern = /s?[\s\/^:\uff1a](?=.{0,7}[a-z])(1[0-9a-z]{6,7})(?=$|[^0-9a-z.='"])\s*(\u5bc6\u7801:?)?\s{0,2}([0-9a-z]{4})?/gi;
