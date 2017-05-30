@@ -55,7 +55,7 @@ function replacer(){
     browser.storage.local.get("baidu", function(value){
         if (value.baidu == "true") {
             //Regex definitions
-            var baiduPattern = /[\s\/^:\uff1a](?=.{0,7}[a-z])(1[0-9a-z]{6,7})(?=$|[^0-9a-z.='"])\s*(\u5bc6\u7801:?)?\s{0,2}([0-9a-z]{4})?/gi;
+            var baiduPattern = /s?[\s\/^:\uff1a](?=.{0,7}[a-z])(1[0-9a-z]{6,7})(?=$|[^0-9a-z.='"])\s*(\u5bc6\u7801:?)?\s{0,2}([0-9a-z]{4})?/gi;
             //Replacer functions
             function baiduReplacer(match, p1, p2, p3){
                 //p10 the number ID
