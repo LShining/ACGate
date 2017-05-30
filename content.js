@@ -3,6 +3,15 @@ browser.storage.local.get("pixiv", function(value){
             browser.storage.local.set({pixiv: "true", bilibili: "true", magnet: "true", baidu: "true"}, function(){});
         }
 });
+
+//Active the custom password script
+var s = document.createElement('script');
+s.src = chrome.extension.getURL('script.js');
+s.onload = function() {
+    this.remove();
+};
+(document.head || document.documentElement).appendChild(s);
+
 function replacer(){
     //Special replacer for hacg
     var hcagPattern = /(\u672c\u7ad9\u6682?\u4e0d\u63d0\u4f9b(\u6587\u4ef6)?\u4e0b\u8f7d)/g
@@ -54,6 +63,9 @@ function replacer(){
     //Process magnet links patterns
     browser.storage.local.get("baidu", function(value){
         if (value.baidu == "true") {
+            //Custom password
+            $(document.body).on("click", "#share", customPassword);
+
             //Regex definitions
             var baiduPattern = /s?[\s\/^:\uff1a](?=.{0,7}[a-z])(1[0-9a-z]{6,7})(?=$|[^0-9a-z.='"])\s*(\u5bc6\u7801:?)?\s{0,2}([0-9a-z]{4})?/gi;
             //Replacer functions
@@ -65,10 +77,29 @@ function replacer(){
             $(function(){$("*").replaceText(baiduPattern, baiduReplacer);});
             
             //Autofill links with password
-            if (/^https?:\/\/pan\.baidu\.com/.test(location.href) && location.hash) {
+            if (/pan\.baidu\.com/.test(location.href) && location.hash  && location.hash.length == 5) {
                 document.getElementById("accessCode").value = location.hash.slice(1,5);
             }
         }
     });
 }
-document.addEventListener("DOMContentLoaded", replacer);
+
+function forcedReplace(){
+    if (document.readyState != "complete"){
+        window.removeEventListener("load", replacer);
+        replacer();
+    }
+}
+
+function customPassword(){
+    var event = new CustomEvent("customPasswordEvent");
+    //console.log("customPasswordEvent");
+    document.dispatchEvent(event);
+}
+
+document.addEventListener("load", replacer);
+
+//document.addEventListener("readystatechange", recorder);
+
+//Forced replace if 10s has passed and load has not been triggered.
+setTimeout(forcedReplace, 10000);

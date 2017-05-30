@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_name__",
   "short_name": "ACGate",
-  "version": "0.13",
+  "version": "0.14",
   "description": "__MSG_description__",
   "content_scripts": [
     {
@@ -26,8 +26,11 @@
     "page": "options/options.html"
   },
   "permissions": [
-  "tabs", "storage"
+        "tabs", "storage"
   ],
+  "web_accessible_resources": [
+        "script.js"
+    ],
   "applications": {
     "gecko": {
       "id": "ACGate@lukeshining.org",
