@@ -97,7 +97,7 @@ function customPassword(){
     document.dispatchEvent(event);
 }
 
-document.addEventListener("load", replacer);
+window.addEventListener("load", replacer);
 
 //document.addEventListener("readystatechange", recorder);
 
