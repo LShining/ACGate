@@ -20,14 +20,14 @@ function replacer(){
     browser.storage.local.get("pixiv", function(value){
         if (value.pixiv == "true") {
             //Regex definitions
-            var pixivPattern = /(?=.{6,20}\b)(?=(\b[Pp])|\b(id|Id|ID))[^0-9]{0,12}(\d{6,10})(?![:.\-\!\?])/g;
+            var pixivPattern = /(?=.{6,20}\b)(?=(\b[Pp])|\b(id|Id|ID))[^0-9?]{0,12}(\d{6,10})(?![:.\-\!\?])/g;
             //Replacer functions
             function pixivReplacer(match, p1, p2, p3){
                 //p3 the number ID
                 return "<a href='https://www.pixiv.net/member_illust.php?mode=medium&illust_id="+p3+"' target='_blank'>"+match+"</a>";
             }
             //Main
-            $(function(){$("*").replaceText(pixivPattern, pixivReplacer);});
+            $(function(){$("*").not("script").replaceText(pixivPattern, pixivReplacer);});
         }
     });
     
@@ -35,28 +35,28 @@ function replacer(){
     browser.storage.local.get("bilibili", function(value){
         if (value.bilibili == "true") {
             //Regex definitions
-            var bilibiliPattern = /(av|Av|AV)(\u53f7)?([0-9]{5,10})(?![:.\-\!\?])/g;
+            var bilibiliPattern = /(av|Av|AV)(\u53f7)?([0-9]{5,10})(?![:.\-\!\?/\d])/g;
             //Replacer functions
             function bilibiliReplacer(match, p1, p2, p3){
                 //p10 the number ID
                 return "<a href='https://www.bilibili.com/video/av"+p3+"/' target='_blank'>"+match+"</a>";
             }
             //Main
-            $(function(){$("*").replaceText(bilibiliPattern, bilibiliReplacer);});
+            $(function(){$("*").not("script").replaceText(bilibiliPattern, bilibiliReplacer);});
         }
     });
     //Process magnet links patterns
     browser.storage.local.get("magnet", function(value){
-        if (value.magnet == "true") {
+        if (value.magnet == "true" && (/hacg/.test(location.href) || (/llss/.test(location.href)))) {
             //Regex definitions
-            var magnetPattern = /(?=.{0,31}[0-9])(?=.{0,31}[a-z])([0-9A-Z]{32,40})(?![:.\-\!\?])/gi;
+            var magnetPattern = /(?=.{0,31}[0-9])(?=.{0,31}[a-z])([0-9A-Z]{32,40})(?![:.\-\!\?a-z0-9])/gi;
             //Replacer functions
             function magnetReplacer(match, p1){
                 //p10 the number ID
                 return "<a href='magnet:?xt=urn:btih:"+p1+"' target='_blank'>"+match+"</a>";
             }
             //Main
-            $(function(){$("*").replaceText(magnetPattern, magnetReplacer);});
+            $(function(){$("*").not("script").replaceText(magnetPattern, magnetReplacer);});
         }
     });
     
@@ -74,7 +74,7 @@ function replacer(){
                 return "<a href='http://pan.baidu.com/s/"+p1+"#"+p3+"' target='_blank'>"+match+"</a>";
             }
             //Main
-            $(function(){$("*").replaceText(baiduPattern, baiduReplacer);});
+            $(function(){$("*").not("script").replaceText(baiduPattern, baiduReplacer);});
             
             //Autofill links with password
             if (/pan\.baidu\.com/.test(location.href) && location.hash  && location.hash.length == 5) {

@@ -1,3 +1,5 @@
+Version 0.141 Bug fixed.
+
 Version 0.14: Updated various regex logics; added support for custom password of private BaiduNetDisk links.
 
 Version 0.13: Use jQuery3.2.1 instead; added application ID.
