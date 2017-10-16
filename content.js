@@ -1,3 +1,4 @@
+//My first js project
 //For the first time this extension run
 chrome.storage.local.get("pixiv", function(value){
         if (value.pixiv == undefined) {
